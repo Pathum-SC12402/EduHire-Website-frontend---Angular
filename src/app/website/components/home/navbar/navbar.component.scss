@@ -1,0 +1,42 @@
+/* Navbar custom styles */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important; /* Yellow hover */
+}
+
+.btn-outline-light:hover {
+  background-color: #ffc107;
+  color: #000;
+  border-color: #ffc107;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .d-flex {
+    flex-direction: column;
+  }
+}
