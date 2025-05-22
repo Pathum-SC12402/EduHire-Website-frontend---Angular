@@ -9,17 +9,13 @@
 <body>
 <section class="cards-section">
   <div class="container cards-container">
-    <div class="card card-teachers">
+    <div class="card card-teachers" (click)="moveToTeacherPage()">
       <h2>For Teachers</h2>
       <p>Create your profile, showcase your skills, and find the perfect teaching job.</p>
     </div>
-    <div class="card card-schools">
+    <div class="card card-schools" (click)="moveToSchoolPage()">
       <h2>For Schools & Institutions</h2>
       <p>Post job vacancies and hire qualified teachers to build your dream team.</p>
-    </div>
-    <div class="card card-designers">
-      <h2>For Designers</h2>
-      <p>Connect with educational platforms to design engaging learning experiences.</p>
     </div>
   </div>
 </section>

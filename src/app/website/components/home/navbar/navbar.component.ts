@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   constructor(private router: Router) { }
+  moveHomePage(){
+    this.router.navigateByUrl('/home');
+  }
   moveGuidelinePage(){
     this.router.navigateByUrl('/guideline');
+  }
+  moveAdvertisementPage(){
+    this.router.navigateByUrl('/advertisement');
   }
 }
