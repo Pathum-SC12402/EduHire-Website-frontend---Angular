@@ -1,0 +1,69 @@
+.teacher-profile-form-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: inherit;
+        background-color: #f9f9f9;
+      }
+
+      input[type="file"] {
+        background-color: transparent;
+      }
+
+      button {
+        padding: 12px 20px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #388e3c;
+        }
+      }
+
+      &.half-width {
+        flex: 1 1 calc(50% - 20px);
+      }
+
+      &.full-width {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}

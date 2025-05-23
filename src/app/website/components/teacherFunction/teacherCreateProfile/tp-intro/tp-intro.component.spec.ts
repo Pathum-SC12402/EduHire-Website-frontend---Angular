@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CategoryLayoutComponent } from './category-layout.component';
+import { TpIntroComponent } from './tp-intro.component';
 
-describe('CategoryLayoutComponent', () => {
-  let component: CategoryLayoutComponent;
-  let fixture: ComponentFixture<CategoryLayoutComponent>;
+describe('TpIntroComponent', () => {
+  let component: TpIntroComponent;
+  let fixture: ComponentFixture<TpIntroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CategoryLayoutComponent]
+      imports: [TpIntroComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CategoryLayoutComponent);
+    fixture = TestBed.createComponent(TpIntroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
