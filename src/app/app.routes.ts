@@ -11,6 +11,7 @@ import { TOpportunityComponent } from './website/pages/t-opportunity/t-opportuni
 import { SignupComponent } from './website/components/auth/signup/signup.component';
 import { SigninComponent } from './website/components/auth/signin/signin.component';
 import { VerificationComponent } from './website/components/auth/verification/verification.component';
+import { TpLayoutComponent } from './website/components/teacherFunction/teacherCreateProfile/tp-layout/tp-layout.component';
 
 export const routes: Routes = [
     {
@@ -52,7 +53,7 @@ export const routes: Routes = [
                     },
                     {
                         path: 'create-profile',
-                        component: TCreateProfileComponent
+                        component: TpLayoutComponent
                     },
                     {
                         path: 'view-profile',

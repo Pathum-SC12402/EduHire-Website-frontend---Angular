@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { SignupComponent } from "../../components/auth/signup/signup.component";
 import { VerificationComponent } from "../../components/auth/verification/verification.component";
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { TpIntroComponent } from "../../components/teacherFunction/teacherCreateProfile/tp-intro/tp-intro.component";
-import { TpFormComponent } from "../../components/teacherFunction/teacherCreateProfile/tp-form/tp-form.component";
+import { TpLayoutComponent } from "../../components/teacherFunction/teacherCreateProfile/tp-layout/tp-layout.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-t-create-profile',
-  imports: [SignupComponent, VerificationComponent, CommonModule, TpIntroComponent, TpFormComponent],
+  imports: [SignupComponent, VerificationComponent, TpLayoutComponent, CommonModule],
   templateUrl: './t-create-profile.component.html',
   styleUrl: './t-create-profile.component.scss'
 })
