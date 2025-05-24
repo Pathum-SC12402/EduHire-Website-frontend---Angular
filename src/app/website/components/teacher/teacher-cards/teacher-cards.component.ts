@@ -11,7 +11,7 @@ export class TeacherCardsComponent {
   constructor(private router: Router) { }
 
   moveToCreateProfile() {
-    this.router.navigateByUrl('/teachers/create-account');
+    this.router.navigateByUrl('/teachers/signup');
   }
   moveToViewProfile() {
     // Logic to navigate to the view profile page
