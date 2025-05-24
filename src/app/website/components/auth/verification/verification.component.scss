@@ -1,0 +1,86 @@
+/* Container Centering */
+.verification-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #c1b6ff, #b8e0ff);
+}
+
+/* Box Styling */
+.verification-box {
+  background-color: #11172b;
+  color: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.verification-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.verification-box p {
+  font-size: 0.95rem;
+  color: #cbd5e0;
+  margin-bottom: 20px;
+}
+
+/* Code Inputs */
+.code-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.code-inputs input {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  background-color: #1e253e;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.code-inputs input:focus {
+  border: 2px solid #667eea;
+}
+
+/* Verify Button */
+.verify-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.verify-btn:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #667eea;
+}

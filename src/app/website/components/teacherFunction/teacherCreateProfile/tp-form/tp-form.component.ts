@@ -11,7 +11,7 @@ export class TpFormComponent {
   onSubmit(form: any) {
     if (form.valid) {
       console.log('Form Submitted:', form.value);
-      // You can now send the form data to your backend API
+      
     } else {
       console.log('Form is invalid');
     }

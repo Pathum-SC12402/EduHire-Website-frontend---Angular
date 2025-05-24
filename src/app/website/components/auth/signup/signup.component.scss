@@ -1,0 +1,108 @@
+/* Centering Container */
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  padding: 30px;
+}
+
+/* Sign-Up Box */
+.signup-box {
+  width: 380px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading */
+.signup-box h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input group */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 1.1rem;
+  animation: pulseIcon 2s infinite ease-in-out;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #66a6ff;
+  box-shadow: 0 0 8px rgba(102, 166, 255, 0.3);
+  outline: none;
+}
+
+/* Button */
+button {
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-2px);
+}
+
+/* Switch Link */
+.switch-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.switch-link:hover {
+  color: #667eea;
+  transform: translateY(-1px);
+}
+
+/* Pulse Icon Animation */
+@keyframes pulseIcon {
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(-52%); }
+}

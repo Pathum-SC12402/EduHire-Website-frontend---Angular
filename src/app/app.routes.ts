@@ -8,6 +8,9 @@ import { InstituteComponent } from './website/pages/institute/institute.componen
 import { TCreateProfileComponent } from './website/pages/t-create-profile/t-create-profile.component';
 import { TViewProfileComponent } from './website/pages/t-view-profile/t-view-profile.component';
 import { TOpportunityComponent } from './website/pages/t-opportunity/t-opportunity.component';
+import { SignupComponent } from './website/components/auth/signup/signup.component';
+import { SigninComponent } from './website/components/auth/signin/signin.component';
+import { VerificationComponent } from './website/components/auth/verification/verification.component';
 
 export const routes: Routes = [
     {
@@ -36,7 +39,19 @@ export const routes: Routes = [
                 component: TeacherComponent,
                 children: [
                     {
-                        path: 'create-account',
+                        path: 'signin',
+                        component: SigninComponent
+                    },
+                    {
+                        path: 'signup',
+                        component: SignupComponent
+                    },
+                    {
+                        path: 'verify-email',
+                        component: VerificationComponent
+                    },
+                    {
+                        path: 'create-profile',
                         component: TCreateProfileComponent
                     },
                     {

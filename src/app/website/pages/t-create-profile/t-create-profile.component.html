@@ -1,5 +1,11 @@
-<app-tp-intro></app-tp-intro>
-<div class="form-container">
+<ng-container *ngIf="isSignupRoute()">
+    <app-signup></app-signup>
+</ng-container>
+<ng-container *ngIf="isVerificationRoute()">
+    <app-verification></app-verification>
+</ng-container>
+<ng-container *ngIf="isCreateProfileRoute()">
+    <app-tp-intro></app-tp-intro>
     <app-tp-form></app-tp-form>
-</div>
+</ng-container>
 
