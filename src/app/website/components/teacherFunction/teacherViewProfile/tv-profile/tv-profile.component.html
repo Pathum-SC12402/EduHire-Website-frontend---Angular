@@ -1,0 +1,42 @@
+<div class="tv-profile-container" *ngIf="profileData">
+  <div class="cover-image">
+    <img [src]="profileData.coverImage || 'assets/cover-placeholder.jpg'" alt="Cover Image">
+  </div>
+
+  <div class="profile-header">
+    <img [src]="profileData.profileImage || 'assets/profile-placeholder.jpg'" alt="Profile" class="profile-img">
+    <div class="basic-info">
+      <h2>{{ profileData.name }}</h2>
+      <p>{{ profileData.email }}</p>
+      <p>{{ profileData.phone }}</p>
+    </div>
+  </div>
+
+  <div class="profile-body">
+    <div class="section">
+      <h3>Personal Info</h3>
+      <p><strong>Age:</strong> {{ profileData.age }}</p>
+      <p><strong>Gender:</strong> {{ profileData.gender }}</p>
+      <p><strong>Address:</strong> {{ profileData.address }}</p>
+    </div>
+
+    <div class="section">
+      <h3>Teaching Details</h3>
+      <p><strong>Specialized Area:</strong> {{ profileData.specializedArea }}</p>
+      <p><strong>Preferred Side:</strong> {{ profileData.preferredSide }}</p>
+    </div>
+
+    <div class="section">
+      <h3>Documents</h3>
+      <p><strong>CV:</strong> 
+        <a *ngIf="profileData.cv" [href]="profileData.cv" target="_blank">View CV</a>
+      </p>
+      <p><strong>Certificates:</strong></p>
+      <ul>
+        <li *ngFor="let cert of profileData.certificates">
+          <a [href]="cert" target="_blank">View Certificate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,6 @@ import { GuidelineComponent } from './website/pages/guideline/guideline.componen
 import { AdvertisementsComponent } from './website/pages/advertisements/advertisements.component';
 import { TeacherComponent } from './website/pages/teacher/teacher.component';
 import { InstituteComponent } from './website/pages/institute/institute.component';
-import { TCreateProfileComponent } from './website/pages/t-create-profile/t-create-profile.component';
 import { TViewProfileComponent } from './website/pages/t-view-profile/t-view-profile.component';
 import { TOpportunityComponent } from './website/pages/t-opportunity/t-opportunity.component';
 import { SignupComponent } from './website/components/auth/signup/signup.component';
