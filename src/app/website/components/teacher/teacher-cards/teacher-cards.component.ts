@@ -14,9 +14,10 @@ export class TeacherCardsComponent {
     this.router.navigateByUrl('/teachers/signup');
   }
   moveToViewProfile() {
-    // Logic to navigate to the view profile page
+    this.router.navigateByUrl('/teachers/signin');
+    localStorage.setItem('pageId', '1');
   }
   moveToOpportunityPage() {
-    // Logic to navigate to the opportunity page
+    localStorage.setItem('pageId', '2');
   } 
 }
