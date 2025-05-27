@@ -14,7 +14,7 @@
       </div>
 
       <div class="edit-icon">
-        <img (click)="popupUpdateForm()" src="pen.png" alt="Edit">
+        <img  *ngIf="isEditVisible" (click)="popupUpdateForm()" src="pen.png" alt="Edit">
       </div>
     </div>
   </div>
