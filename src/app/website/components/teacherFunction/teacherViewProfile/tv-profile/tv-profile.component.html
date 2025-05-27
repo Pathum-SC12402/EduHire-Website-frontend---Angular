@@ -4,7 +4,7 @@
   </div>
 
   <div class="profile-header">
-    <img [src]="profileData.profileImage || 'assets/profile-placeholder.jpg'" alt="Profile" class="profile-img">
+    <img [src]="profileData.profileImage || 'user.png'" alt="Profile" class="profile-img">
     <div class="basic-info">
       <h2>{{ profileData.name }}</h2>
       <p>{{ profileData.email }}</p>
@@ -26,17 +26,30 @@
       <p><strong>Preferred Side:</strong> {{ profileData.preferredSide }}</p>
     </div>
 
-    <div class="section">
-      <h3>Documents</h3>
-      <p><strong>CV:</strong> 
-        <a *ngIf="profileData.cv" [href]="profileData.cv" target="_blank">View CV</a>
-      </p>
-      <p><strong>Certificates:</strong></p>
-      <ul>
-        <li *ngFor="let cert of profileData.certificates">
-          <a [href]="cert" target="_blank">View Certificate</a>
-        </li>
-      </ul>
+    <div class="section" *ngIf="profileData.cv">
+      <h3>Curriculum Vitae</h3>
+      <div class="cv-box">
+        <div class="cv-thumbnail">
+          <p>Preview available
+            <a [href]="profileData.cv" target="_blank" alt="CV Thumbnail">
+              <img src="link.png" alt="CV Thumbnail">
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" *ngIf="profileData.certificates && profileData.certificates.length">
+      <h3>Certificates</h3>
+      <div class="certificate-grid">
+        <div class="certificate-box" *ngFor="let cert of profileData.certificates">
+          <img src="certificate.png" alt="Certificate Thumbnail">
+          <p>{{cert.name}}</p>
+            <a [href]="profileData.url" target="_blank" alt="CV Thumbnail">
+              <img src="link.png" alt="CV Thumbnail">
+            </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
