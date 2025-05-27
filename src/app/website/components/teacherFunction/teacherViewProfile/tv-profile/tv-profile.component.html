@@ -5,10 +5,17 @@
 
   <div class="profile-header">
     <img [src]="profileData.profileImage || 'user.png'" alt="Profile" class="profile-img">
-    <div class="basic-info">
-      <h2>{{ profileData.name }}</h2>
-      <p>{{ profileData.email }}</p>
-      <p>{{ profileData.phone }}</p>
+
+    <div class="header-content">
+      <div class="basic-info">
+        <h2>{{ profileData.name }}</h2>
+        <p>{{ profileData.email }}</p>
+        <p>{{ profileData.phone }}</p>
+      </div>
+
+      <div class="edit-icon">
+        <img (click)="popupUpdateForm()" src="pen.png" alt="Edit">
+      </div>
     </div>
   </div>
 
@@ -51,5 +58,14 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showUpdatePopup">
+  <div class="modal-box">
+    <button class="close-btn" (click)="closePopup()">✖</button>
+
+    <!-- Teacher update form component embedded as popup -->
+    <app-tp-update></app-tp-update>
   </div>
 </div>

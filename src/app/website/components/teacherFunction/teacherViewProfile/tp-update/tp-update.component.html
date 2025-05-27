@@ -1,0 +1,67 @@
+<form [formGroup]="teacherForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+  <h2>Update Teacher Profile</h2>
+
+  <label>Name:</label>
+  <input formControlName="name" type="text" />
+
+  <label>Email:</label>
+  <input formControlName="email" type="email" />
+
+  <label>Phone:</label>
+  <input formControlName="phone" type="text" />
+
+  <label>Age:</label>
+  <input formControlName="age" type="number" min="18" max="100" />
+
+  <label>Gender:</label>
+  <select formControlName="gender">
+    <option value="">-- Select Gender --</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label>Address:</label>
+  <textarea formControlName="address"></textarea>
+
+  <label>Specialized Area:</label>
+  <input formControlName="specializedArea" type="text" />
+
+  <label>Preferred Side:</label>
+  <input formControlName="preferredSide" type="text" />
+
+  <!-- Cover Image Upload -->
+  <div>
+    <label>Cover Photo:</label>
+    <input type="file" (change)="onImageChange($event, 'coverImage')" accept="image/*" />
+    <div *ngIf="coverPreview">
+      <img [src]="coverPreview" alt="Cover Preview" width="200" />
+    </div>
+  </div>
+
+  <!-- Profile Image Upload -->
+  <div>
+    <label>Profile Photo:</label>
+    <input type="file" (change)="onImageChange($event, 'profileImage')" accept="image/*" />
+    <div *ngIf="profilePreview">
+      <img [src]="profilePreview" alt="Profile Preview" width="100" />
+    </div>
+  </div>
+
+  <div formArrayName="certificates">
+    <h3>Certificates</h3>
+    <div class="certificate-box" *ngFor="let cert of certificates.controls; let i = index" [formGroupName]="i">
+      <label>Certificate Name:</label>
+      <input formControlName="name" type="text" />
+
+      <label>Upload Certificate:</label>
+      <input type="file" (change)="onCertFileChange($event, i)" />
+
+      <button type="button" (click)="removeCertificate(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addCertificate()">Add Certificate</button>
+  </div>
+
+  <br />
+  <button type="submit">Submit</button>
+</form>

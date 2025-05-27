@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TpUpdateComponent } from "../tp-update/tp-update.component";
 
 @Component({
   selector: 'app-tv-profile',
-  imports: [CommonModule],
+  imports: [CommonModule, TpUpdateComponent],
   templateUrl: './tv-profile.component.html',
   styleUrl: './tv-profile.component.scss'
 })
@@ -32,8 +33,35 @@ export class TvProfileComponent {
         {
           name: 'Online Education Strategy',
           url: 'https://example.com/certificates/online-edu.pdf'
-        }
+        },
+        {
+          name: 'Online Education Strategy',
+          url: 'https://example.com/certificates/online-edu.pdf'
+        },
+        {
+          name: 'Online Education Strategy',
+          url: 'https://example.com/certificates/online-edu.pdf'
+        },
+        {
+          name: 'Online Education Strategy',
+          url: 'https://example.com/certificates/online-edu.pdf'
+        },
+        {
+          name: 'Online Education Strategy',
+          url: 'https://example.com/certificates/online-edu.pdf'
+        },
       ]
     };
+  }
+
+  showUpdatePopup = false;
+
+  popupUpdateForm() {
+    console.log("Update form popup triggered");
+    this.showUpdatePopup = true;
+  }
+
+  closePopup() {
+    this.showUpdatePopup = false;
   }
 }
