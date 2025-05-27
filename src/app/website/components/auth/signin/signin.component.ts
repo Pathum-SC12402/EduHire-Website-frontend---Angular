@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-signin',
@@ -9,13 +10,12 @@ import { Router } from '@angular/router';
   styleUrl: './signin.component.scss'
 })
 export class SigninComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cookieService: CookieService) { }
   onLogin(formData: { email: string; password: string }) {
-    const id = localStorage.getItem('pageId');
-    console.log('Form Data:', formData);
+    this.cookieService.set('pageId', '1', 1);
+    const id = this.cookieService.get('pageId');
     if(id == '1' && formData.email=='t' && formData.password=='t') {
       console.log('Login successful');
-      console.log('id:', id);
       this.router.navigateByUrl('/teachers/view-profile');
     }
   }

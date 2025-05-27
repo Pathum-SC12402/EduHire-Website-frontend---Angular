@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TpUpdateComponent } from "../tp-update/tp-update.component";
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-tv-profile',
@@ -10,9 +11,16 @@ import { TpUpdateComponent } from "../tp-update/tp-update.component";
 })
 export class TvProfileComponent {
   profileData: any;
-
+  isEditVisible = true;
+  constructor(private cookieService: CookieService) { }
   ngOnInit(): void {
     // Set static or fetched profile data
+    const id = this.cookieService.get('pageId');
+    console.log('Page ID:', id);
+    if (id !== '1') {
+      console.log('Invalid page ID:', id);
+      this.isEditVisible = false;
+    }
     this.profileData = {
       name: 'John Doe',
       email: 'john.doe@example.com',
@@ -64,4 +72,6 @@ export class TvProfileComponent {
   closePopup() {
     this.showUpdatePopup = false;
   }
+
+  
 }
