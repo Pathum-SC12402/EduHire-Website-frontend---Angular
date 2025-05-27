@@ -21,6 +21,7 @@
   padding: 20px;
   background-color: #fafafa;
   border-bottom: 1px solid #e0e0e0;
+  gap: 20px;
 }
 
 .profile-img {
@@ -31,6 +32,19 @@
   border: 4px solid #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.edit-icon img {
+  padding: auto;
+  width: 50px;
+  cursor: pointer;
 }
 
 .basic-info h2 {
@@ -71,6 +85,10 @@
   color: #444;
 }
 
+.section img{
+  max-width: 30px;
+}
+
 .section a {
   color: #007bff;
   text-decoration: none;
@@ -87,4 +105,124 @@ ul {
 
 ul li {
   margin-bottom: 5px;
+}
+
+/* ====== NEW STYLES FOR CERTIFICATES ====== */
+
+.certificates {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.certificate-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.certificate-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.certificate-box:hover {
+  transform: translateY(-3px);
+}
+
+.cert-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.certificate-box span {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.cert-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.cert-actions a {
+  color: #555;
+  font-size: 1rem;
+}
+
+.cert-actions a:hover {
+  color: #007bff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .profile-img {
+    margin: 0 auto 15px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .edit-icon {
+    align-self: flex-end;
+    margin-top: 10px;
+  }
 }
