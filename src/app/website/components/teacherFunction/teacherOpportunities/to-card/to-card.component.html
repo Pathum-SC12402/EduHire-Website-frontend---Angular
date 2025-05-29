@@ -1,23 +1,45 @@
-<div class="calendar">
-  <div class="week-block" *ngFor="let week of weeks">
-    <h3 class="week-header">{{ week.monday | date:'MMM d' }}</h3>
-    <div class="card-list">
-      <div class="job-card"
-           *ngFor="let job of week.jobs"
-           [ngClass]="{
-             'school-card': job.type === 'School',
-             'institute-card': job.type === 'Institute'
-           }">
-        <div class="watermark">{{ job.type }}</div>
-        <h4>{{ job.schoolName }}</h4>
-        <p><strong>District:</strong> {{ job.district }}</p>
-        <p><strong>Field:</strong> {{ job.field }}</p>
-        <p><strong>Opened:</strong> {{ job.opened | date:'MMM d' }}</p>
-        <p><strong>Deadline:</strong> {{ job.deadline | date:'MMM d' }}</p>
-        <div class="button-container">
-            <button>View</button>
-        </div>
-      </div>
+<div class="to-card">
+    <div class="filters">
+    <label>
+        Type:
+        <select [(ngModel)]="selectedType" (change)="applyFilters()">
+        <option value="">All</option>
+        <option value="School">School</option>
+        <option value="Institute">Institute</option>
+        </select>
+    </label>
+
+    <label>
+        Field:
+        <select [(ngModel)]="selectedField" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let field of uniqueFields" [value]="field">{{ field }}</option>
+        </select>
+    </label>
     </div>
-  </div>
+
+
+    <div class="calendar">
+    <div class="week-block" *ngFor="let week of weeks">
+        <h3 class="week-header">{{ week.monday | date:'MMM d' }}</h3>
+        <div class="card-list">
+        <div class="job-card"
+            *ngFor="let job of week.jobs"
+            [ngClass]="{
+                'school-card': job.type === 'School',
+                'institute-card': job.type === 'Institute'
+            }">
+            <div class="watermark">{{ job.type }}</div>
+            <h4>{{ job.schoolName }}</h4>
+            <p><strong>District:</strong> {{ job.district }}</p>
+            <p><strong>Field:</strong> {{ job.field }}</p>
+            <p><strong>Opened:</strong> {{ job.opened | date:'MMM d' }}</p>
+            <p><strong>Deadline:</strong> {{ job.deadline | date:'MMM d' }}</p>
+            <div class="button-container">
+                <button>View</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
 </div>

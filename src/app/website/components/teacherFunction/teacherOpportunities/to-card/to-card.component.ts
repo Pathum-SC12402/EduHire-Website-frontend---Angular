@@ -1,14 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { startOfWeek, format, getWeek } from 'date-fns';
+import { Component} from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { startOfWeek, getWeek } from 'date-fns';
 
 @Component({
   selector: 'app-to-card',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './to-card.component.html',
   styleUrl: './to-card.component.scss'
 })
 export class ToCardComponent {
+  selectedType: string = '';
+  selectedField: string = '';
+  uniqueFields: string[] = [];
+  filteredVacancies: any[] = [];
+
   jobVacancies: any[] = [];
   weeks: { week: number, monday: Date, jobs: any[] }[] = [];
 
@@ -63,6 +69,15 @@ export class ToCardComponent {
         type: "School"
       }
     ];
+    this.uniqueFields = Array.from(new Set(this.jobVacancies.map(j => j.field))).sort();
+    this.applyFilters();
+  }
+
+  applyFilters(): void {
+    this.filteredVacancies = this.jobVacancies.filter(job => {
+      return (!this.selectedType || job.type === this.selectedType) &&
+            (!this.selectedField || job.field === this.selectedField);
+    });
 
     this.groupByWeek();
   }
@@ -70,7 +85,7 @@ export class ToCardComponent {
   groupByWeek(): void {
     const weekMap = new Map<number, { monday: Date, jobs: any[] }>();
 
-    for (let job of this.jobVacancies) {
+    for (let job of this.filteredVacancies) {
       const jobDate = new Date(job.opened);
       const weekNumber = getWeek(jobDate, { weekStartsOn: 1 });
       const monday = startOfWeek(jobDate, { weekStartsOn: 1 });
@@ -90,5 +105,4 @@ export class ToCardComponent {
       }))
       .sort((a, b) => a.week - b.week);
   }
-
 }
