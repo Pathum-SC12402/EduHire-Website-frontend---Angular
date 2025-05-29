@@ -1,3 +1,41 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: #abb0b4;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filters select {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  min-width: 160px;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.filters select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 .calendar {
   padding: 20px;
   display: flex;
@@ -87,3 +125,19 @@
   pointer-events: none;
   z-index: 0;
 }
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters label {
+    width: 100%;
+  }
+
+  .filters select {
+    width: 100%;
+  }
+}
+
