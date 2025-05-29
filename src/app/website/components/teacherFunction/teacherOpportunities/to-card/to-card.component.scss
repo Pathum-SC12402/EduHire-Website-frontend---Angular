@@ -1,0 +1,89 @@
+.calendar {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.week-block {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #b0dbe2;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.week-header {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.job-card {
+  position: relative;
+  width: 250px;
+  padding: 16px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+}
+
+.school-card {
+  background-color: #28a745;
+}
+
+.institute-card {
+  background-color: #dc3545;
+}
+
+.job-card h4 {
+  margin-top: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.button-container button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-container button:hover {
+  background-color: #f2f2f2;
+}
+
+.watermark {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.15);
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: 0;
+}
