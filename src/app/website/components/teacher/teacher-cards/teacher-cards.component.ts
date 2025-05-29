@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-teacher-cards',
   imports: [],
@@ -8,16 +8,18 @@ import { Router } from '@angular/router';
   styleUrl: './teacher-cards.component.scss'
 })
 export class TeacherCardsComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cookieService: CookieService) { }
 
   moveToCreateProfile() {
     this.router.navigateByUrl('/teachers/signup');
+    this.cookieService.set('pageId', '1', 1);
   }
   moveToViewProfile() {
+    this.cookieService.set('pageId', '2', 1);
     this.router.navigateByUrl('/teachers/signin');
-    localStorage.setItem('pageId', '1');
   }
   moveToOpportunityPage() {
-    localStorage.setItem('pageId', '2');
+    this.cookieService.set('pageId', '3', 1);
+    this.router.navigateByUrl('/teachers/signin');
   } 
 }

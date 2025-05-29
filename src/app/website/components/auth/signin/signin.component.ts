@@ -12,11 +12,14 @@ import { CookieService } from 'ngx-cookie-service';
 export class SigninComponent {
   constructor(private router: Router, private cookieService: CookieService) { }
   onLogin(formData: { email: string; password: string }) {
-    this.cookieService.set('pageId', '1', 1);
     const id = this.cookieService.get('pageId');
-    if(id == '1' && formData.email=='t' && formData.password=='t') {
+    if(id == '2' && formData.email=='t' && formData.password=='t') {
       console.log('Login successful');
       this.router.navigateByUrl('/teachers/view-profile');
+    }
+    if(id == '3' && formData.email=='t' && formData.password=='t') {
+      console.log('Login successful');
+      this.router.navigateByUrl('teacher-opportunity');
     }
   }
   navigateToSignup() {

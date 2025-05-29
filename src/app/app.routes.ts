@@ -58,10 +58,6 @@ export const routes: Routes = [
                         path: 'view-profile',
                         component: TViewProfileComponent
                     },
-                    {
-                        path: 'opportunities',
-                        component: TOpportunityComponent
-                    },
                 ]
             },
             {
@@ -70,4 +66,9 @@ export const routes: Routes = [
             },
         ]
     },
+    {
+        path: 'teacher-opportunity',
+        component: TOpportunityComponent,
+
+    }
 ];
