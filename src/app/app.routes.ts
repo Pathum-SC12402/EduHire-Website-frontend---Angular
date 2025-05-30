@@ -11,6 +11,7 @@ import { SignupComponent } from './website/components/auth/signup/signup.compone
 import { SigninComponent } from './website/components/auth/signin/signin.component';
 import { VerificationComponent } from './website/components/auth/verification/verification.component';
 import { TpLayoutComponent } from './website/components/teacherFunction/teacherCreateProfile/tp-layout/tp-layout.component';
+import { ToLayerComponent } from './website/components/teacherFunction/teacherOpportunities/to-layer/to-layer.component';
 
 export const routes: Routes = [
     {
@@ -69,6 +70,11 @@ export const routes: Routes = [
     {
         path: 'teacher-opportunity',
         component: TOpportunityComponent,
-
+        children: [
+            {
+                path: 'details/:id',
+                component: ToLayerComponent
+            },
+        ]
     }
 ];

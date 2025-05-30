@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterOutlet } from '@angular/router';
 import { startOfWeek, getWeek } from 'date-fns';
 
 @Component({
   selector: 'app-to-card',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterOutlet],
   templateUrl: './to-card.component.html',
   styleUrl: './to-card.component.scss'
 })
@@ -18,9 +19,12 @@ export class ToCardComponent {
   jobVacancies: any[] = [];
   weeks: { week: number, monday: Date, jobs: any[] }[] = [];
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     this.jobVacancies = [
       {
+        id: 1,
         schoolName: "Springfield High School",
         district: "Colombo",
         field: "Mathematics",
@@ -37,6 +41,7 @@ export class ToCardComponent {
         type: "Institute"
       },
       {
+        id: 2,
         schoolName: "Oceanview College",
         district: "Galle",
         field: "English Literature",
@@ -53,6 +58,7 @@ export class ToCardComponent {
         type: "School"
       },
       {
+        id: 3,
         schoolName: "Riverside Institute",
         district: "Kurunegala",
         field: "Biology",
@@ -61,6 +67,7 @@ export class ToCardComponent {
         type: "Institute"
       },
       {
+        id: 4,
         schoolName: "Lakeside School",
         district: "Matara",
         field: "History",
@@ -104,5 +111,13 @@ export class ToCardComponent {
         jobs: data.jobs
       }))
       .sort((a, b) => a.week - b.week);
+  }
+
+  viewCard(jobId: number): void {
+    this.router.navigateByUrl(`/teacher-opportunity/details/${jobId}`);
+  }
+
+  isRootTORoute(): boolean {
+    return this.router.url === '/teacher-opportunity' || this.router.url === '/teacher-opportunity/';
   }
 }
