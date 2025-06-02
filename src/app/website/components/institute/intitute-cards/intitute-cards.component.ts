@@ -13,6 +13,7 @@ export class IntituteCardsComponent {
   moveToCreateInstitutionProfile(){
     this.router.navigateByUrl('/institution/signup');
     this.cookieService.set('pageId', '4', 1);
+    console.log('Page ID set to 4 for institution signup');
   }
   moveToViewInstitutionProfile(){
     this.router.navigateByUrl('/institution/signin');

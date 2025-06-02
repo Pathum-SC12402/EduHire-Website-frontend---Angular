@@ -1,1 +1,47 @@
-<p>ip-form works!</p>
+<div class="teacher-profile-form-container">
+  <h2>Create Institution Profile</h2>
+  <form (ngSubmit)="onSubmit(teacherForm)" #teacherForm="ngForm" enctype="multipart/form-data">
+    
+    <!-- Cover Image -->
+    <div class="form-group full-width">
+      <label for="coverImage">Cover Image</label>
+      <input type="file" id="coverImage" name="coverImage" accept="image/*" />
+    </div>
+
+    <!-- Profile Image -->
+    <div class="form-group full-width">
+      <label for="profileImage">Profile Image</label>
+      <input type="file" id="profileImage" name="profileImage" accept="image/*" />
+    </div>
+
+    <!-- Name -->
+    <div class="form-group half-width">
+      <label for="name">School/Institute Name</label>
+      <input type="text" id="name" name="name" ngModel required />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group half-width">
+      <label for="email">Career Email</label>
+      <input type="email" id="email" name="email" ngModel required />
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group half-width">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" ngModel required />
+    </div>
+
+    <!-- Address -->
+    <div class="form-group full-width">
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" ngModel></textarea>
+    </div>
+
+    <!-- Submit -->
+    <div class="form-group full-width">
+      <button type="submit">Submit Profile</button>
+    </div>
+  </form>
+</div>
+
