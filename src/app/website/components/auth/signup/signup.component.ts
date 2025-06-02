@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-signup',
@@ -10,12 +11,17 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cookieService: CookieService) { }
   onSubmit(formData: { email: string; password: string }) {
     console.log('Form Data:', formData);
-    if(formData.email=='t' && formData.password=='t') {
+    const id = this.cookieService.get('pageId');
+    if(id == '1' && formData.email=='t' && formData.password=='t') {
       console.log('Signup successful');
       this.router.navigateByUrl('/teachers/verify-email');
+    }
+    if(id == '4' && formData.email=='t' && formData.password=='t') {
+      console.log('Signup successful');
+      this.router.navigateByUrl('/institution/verify-email');
     }
   }
 }
