@@ -1,0 +1,87 @@
+.job-detail-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+
+  background-image: url('/teacher.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.job-header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #2c3e50;
+}
+
+.tag {
+  background-color: #007bff;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.job-meta p {
+  margin: 4px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.job-description, .job-requirements {
+  margin-top: 24px;
+}
+
+.job-description h3,
+.job-requirements h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.job-description p {
+  line-height: 1.6;
+  color: #444;
+}
+
+.job-requirements ul {
+  padding-left: 20px;
+  color: #444;
+}
+
+.job-requirements li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.back-button {
+  text-align: right;
+  margin-top: 32px;
+}
+
+.back-button button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.back-button button:hover {
+  background-color: #d5d5d5;
+}

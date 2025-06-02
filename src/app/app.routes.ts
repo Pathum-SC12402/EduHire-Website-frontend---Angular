@@ -11,6 +11,9 @@ import { SignupComponent } from './website/components/auth/signup/signup.compone
 import { SigninComponent } from './website/components/auth/signin/signin.component';
 import { VerificationComponent } from './website/components/auth/verification/verification.component';
 import { TpLayoutComponent } from './website/components/teacherFunction/teacherCreateProfile/tp-layout/tp-layout.component';
+import { ToLayerComponent } from './website/components/teacherFunction/teacherOpportunities/to-layer/to-layer.component';
+import { IpLayoutComponent } from './website/components/instituteFunction/instituteCreateProfile/ip-layout/ip-layout.component';
+import { SViewProfileComponent } from './website/pages/s-view-profile/s-view-profile.component';
 
 export const routes: Routes = [
     {
@@ -62,13 +65,40 @@ export const routes: Routes = [
             },
             {
                 path: 'institution',
-                component: InstituteComponent
+                component: InstituteComponent,
+                children: [
+                    {
+                        path: 'signin',
+                        component: SigninComponent
+                    },
+                    {
+                        path: 'signup',
+                        component: SignupComponent
+                    },
+                    {
+                        path: 'verify-email',
+                        component: VerificationComponent
+                    },
+                    {
+                        path: 'create-profile',
+                        component: IpLayoutComponent
+                    },
+                    {
+                        path: 'view-profile',
+                        component: SViewProfileComponent
+                    },
+                ]
             },
         ]
     },
     {
         path: 'teacher-opportunity',
         component: TOpportunityComponent,
-
+        children: [
+            {
+                path: 'details/:id',
+                component: ToLayerComponent
+            },
+        ]
     }
 ];

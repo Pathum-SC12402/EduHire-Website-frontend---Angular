@@ -1,3 +1,6 @@
-<app-intitute-intro></app-intitute-intro>
-<app-intitute-cards></app-intitute-cards>
-<app-intitute-features></app-intitute-features>
+<ng-container *ngIf="isRootInstituteRoute()">
+    <app-intitute-intro></app-intitute-intro>
+    <app-intitute-cards></app-intitute-cards>
+    <app-intitute-features></app-intitute-features>
+</ng-container>
+<router-outlet></router-outlet>

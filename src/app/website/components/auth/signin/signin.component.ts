@@ -16,10 +16,15 @@ export class SigninComponent {
     if(id == '2' && formData.email=='t' && formData.password=='t') {
       console.log('Login successful');
       this.router.navigateByUrl('/teachers/view-profile');
-    }
-    if(id == '3' && formData.email=='t' && formData.password=='t') {
+    }else if(id == '3' && formData.email=='t' && formData.password=='t') {
       console.log('Login successful');
       this.router.navigateByUrl('teacher-opportunity');
+    }else if(id == '5' && formData.email=='t' && formData.password=='t') {
+      console.log('Login successful');
+      this.router.navigateByUrl('/institution/view-profile');
+    }else if(id == '6' && formData.email=='t' && formData.password=='t') {
+      console.log('Login successful');
+      this.router.navigateByUrl('/institution/create-profile');
     }
   }
   navigateToSignup() {

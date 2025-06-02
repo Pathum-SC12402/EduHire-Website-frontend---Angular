@@ -1,3 +1,4 @@
+<ng-container *ngIf="isRootTORoute()">
 <div class="to-card">
     <div class="filters">
     <label>
@@ -36,10 +37,12 @@
             <p><strong>Opened:</strong> {{ job.opened | date:'MMM d' }}</p>
             <p><strong>Deadline:</strong> {{ job.deadline | date:'MMM d' }}</p>
             <div class="button-container">
-                <button>View</button>
+                <button (click)="viewCard(job.id)">View</button>
             </div>
         </div>
         </div>
     </div>
     </div>
 </div>
+</ng-container>
+<router-outlet />

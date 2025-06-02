@@ -1,0 +1,31 @@
+<div class="job-detail-container">
+  <div class="job-header">
+    <h2>{{ job.schoolName }}</h2>
+    <span class="tag">{{ job.type }}</span>
+  </div>
+
+  <div class="job-meta">
+    <p><strong>District:</strong> {{ job.district }}</p>
+    <p><strong>Field:</strong> {{ job.field }}</p>
+    <p><strong>Grades/Level:</strong> {{ job.level }}</p>
+    <p><strong>Opened:</strong> {{ job.opened | date: 'MMM d, y' }}</p>
+    <p><strong>Deadline:</strong> {{ job.deadline | date: 'MMM d, y' }}</p>
+  </div>
+
+  <div class="job-description">
+    <h3>Description</h3>
+    <p>{{ job.description }}</p>
+  </div>
+
+  <div class="job-requirements">
+    <h3>Requirements</h3>
+    <ul>
+      <li *ngFor="let req of job.requirements">{{ req }}</li>
+    </ul>
+  </div>
+
+  <div class="back-button">
+    <button (click)="goBack()">Back</button>
+  </div>
+</div>
+

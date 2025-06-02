@@ -1,0 +1,48 @@
+<div class="application-form-container">
+  <h2>Apply for Opportunity</h2>
+
+  <form (ngSubmit)="onSubmit()" #applicationForm="ngForm">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required [(ngModel)]="formData.name">
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required [(ngModel)]="formData.email">
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required [(ngModel)]="formData.phone">
+    </div>
+
+    <!-- Cover Letter -->
+    <div class="form-group">
+      <label for="coverLetter">Upload Cover Letter (PDF/DOC)</label>
+      <input type="file" id="coverLetter" name="coverLetter" (change)="onFileChange($event, 'coverLetter')" accept=".pdf,.doc,.docx">
+    </div>
+
+    <!-- CV -->
+    <div class="form-group">
+      <label for="cv">Upload CV (PDF/DOC)</label>
+      <input type="file" id="cv" name="cv" (change)="onFileChange($event, 'cv')" accept=".pdf,.doc,.docx">
+    </div>
+
+    <!-- Trust Statement -->
+    <div class="form-group checkbox-group">
+      <input type="checkbox" id="trust" name="trust" required [(ngModel)]="formData.trust">
+      <label for="trust">I confirm that the above details are true and correct.</label>
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-actions">
+      <button type="submit" [disabled]="!applicationForm.form.valid">Apply</button>
+      <button type="button" class="clear" (click)="onClear()">Clear</button>
+    </div>
+  </form>
+</div>
+

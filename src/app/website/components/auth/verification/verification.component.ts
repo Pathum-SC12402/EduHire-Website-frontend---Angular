@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-verification',
@@ -14,15 +15,18 @@ export class VerificationComponent {
   digit3: string = '';
   digit4: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cookieService: CookieService) { }
 
   onVerify(code: string) {
     console.log('Verification code:', code);
-
-    if (code === '1234') {
+    const id = this.cookieService.get('pageId');
+    if (id == '1' && code === '1234') {
       console.log('Verification successful');
       this.router.navigateByUrl('/teachers/create-profile');
-    } else {
+    } else if (id == '4' && code === '1234') {
+      console.log('Verification successful');
+      this.router.navigateByUrl('/institution/create-profile');
+    }else{
       console.log('Verification failed');
       alert('Invalid verification code. Please try again.');
     }
