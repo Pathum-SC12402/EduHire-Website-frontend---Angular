@@ -1,1 +1,39 @@
-<p>ip-update works!</p>
+<form [formGroup]="institutionForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+  <h2>Update Teacher Profile</h2>
+
+  <label>Institution Name:</label>
+  <input formControlName="name" type="text" />
+
+  <label>Email:</label>
+  <input formControlName="email" type="email" />
+
+  <label>Phone:</label>
+  <input formControlName="phone" type="text" />
+
+  <label>Address:</label>
+  <textarea formControlName="address"></textarea>
+
+  <label>Description:</label>
+  <textarea formControlName="description"></textarea>
+
+  <!-- Cover Image Upload -->
+  <div>
+    <label>Cover Photo:</label>
+    <input type="file" (change)="onImageChange($event, 'coverImage')" accept="image/*" />
+    <div *ngIf="coverPreview">
+      <img [src]="coverPreview" alt="Cover Preview" width="200" />
+    </div>
+  </div>
+
+  <!-- Profile Image Upload -->
+  <div>
+    <label>Profile Photo:</label>
+    <input type="file" (change)="onImageChange($event, 'profileImage')" accept="image/*" />
+    <div *ngIf="profilePreview">
+      <img [src]="profilePreview" alt="Profile Preview" width="100" />
+    </div>
+  </div>
+
+  <br />
+  <button type="submit">Submit</button>
+</form>

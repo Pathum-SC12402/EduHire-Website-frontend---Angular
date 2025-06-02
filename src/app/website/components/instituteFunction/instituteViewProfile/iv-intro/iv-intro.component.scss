@@ -1,0 +1,33 @@
+.institution-intro-section {
+  padding: 60px 20px;
+  background-color: #9a0303; // Deep red background
+  font-family: 'Segoe UI', sans-serif;
+  color: #f5f5f5; // Base text color for contrast
+
+  .institution-intro-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffffff; // Title color
+
+      .highlight {
+        color: #ffeb3b; // Highlight color for "Profile"
+      }
+    }
+
+    .intro-text {
+      font-size: 1.125rem;
+      margin-bottom: 20px;
+      color: #e0f2e9; // Subtle greenish text for readability
+    }
+
+    // Remove any unnecessary ul styling
+    ul {
+      display: none; // Hide UL if any leftover remains
+    }
+  }
+}
