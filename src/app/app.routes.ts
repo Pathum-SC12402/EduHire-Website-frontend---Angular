@@ -14,6 +14,7 @@ import { TpLayoutComponent } from './website/components/teacherFunction/teacherC
 import { ToLayerComponent } from './website/components/teacherFunction/teacherOpportunities/to-layer/to-layer.component';
 import { IpLayoutComponent } from './website/components/instituteFunction/instituteCreateProfile/ip-layout/ip-layout.component';
 import { SViewProfileComponent } from './website/pages/s-view-profile/s-view-profile.component';
+import { SApplicationComponent } from './website/pages/s-application/s-application.component';
 
 export const routes: Routes = [
     {
@@ -100,5 +101,9 @@ export const routes: Routes = [
                 component: ToLayerComponent
             },
         ]
+    },
+    {
+        path: 'applications',
+        component: SApplicationComponent
     }
 ];
