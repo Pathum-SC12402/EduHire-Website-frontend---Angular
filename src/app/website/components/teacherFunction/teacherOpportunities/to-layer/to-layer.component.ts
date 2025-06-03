@@ -5,7 +5,7 @@ import { FooterComponent } from "../../../home/footer/footer.component";
 
 @Component({
   selector: 'app-to-layer',
-  imports: [ToDetailsComponent, ApplicationFormComponent, FooterComponent],
+  imports: [ToDetailsComponent, ApplicationFormComponent],
   templateUrl: './to-layer.component.html',
   styleUrl: './to-layer.component.scss'
 })

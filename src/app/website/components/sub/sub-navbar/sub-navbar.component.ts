@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SubNavbarComponent {
   constructor(private router: Router) { }
+  profilePic: string = 'assets/images/logo.png';
   moveHomePage(){
     this.router.navigateByUrl('/home');
   }
@@ -18,4 +19,6 @@ export class SubNavbarComponent {
   moveAdvertisementPage(){
     this.router.navigateByUrl('/advertisement');
   }
+
+
 }

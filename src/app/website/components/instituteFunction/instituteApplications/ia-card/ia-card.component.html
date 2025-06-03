@@ -1,0 +1,70 @@
+<div class="to-card">
+  <!-- Filters -->
+  <div class="filters">
+    <label>
+      Subject:
+      <select [(ngModel)]="selectedSubject" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let subject of uniqueSubjects" [value]="subject">{{ subject }}</option>
+      </select>
+    </label>
+
+    <label>
+      Gender:
+      <select [(ngModel)]="selectedGender" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let gender of uniqueGenders" [value]="gender">{{ gender }}</option>
+      </select>
+    </label>
+  </div>
+
+  <!-- Weekly Job Cards -->
+  <div class="calendar">
+    <div class="week-block" *ngFor="let week of weeks">
+      <h3 class="week-header">{{ week.monday | date: 'MMM d' }}</h3>
+
+      <div class="card-list">
+        <div
+          class="job-card"
+          *ngFor="let job of week.jobs"
+          [ngClass]="{
+            'school-card': job.type === 'School',
+            'institute-card': job.type === 'Institute'
+          }"
+        >
+          <div class="watermark">{{ job.type }}</div>
+
+          <h4>{{ job.name }} ({{job.gender}})</h4>
+
+          <p><strong>Email:</strong> {{ job.email }}</p>
+          <p><strong>Phone:</strong> {{ job.phone }}</p>
+          <p><strong>Location:</strong> {{ job.location }}</p>
+          <p><strong>Subject:</strong> {{ job.subject }}</p>
+
+          <p>
+            <strong>CV:</strong>
+            <a [href]="job.cv" target="_blank">
+              <img src="link.png" alt="CV Link" width="20" />
+            </a>
+          </p>
+
+          <p>
+            <strong>Cover Letter:</strong>
+            <a [href]="job.coverLetter" target="_blank">
+              <img src="link.png" alt="Cover Letter Link" width="20" />
+            </a>
+          </p>
+
+          <p>
+            <strong>Profile:</strong>
+            <a [href]="job.profileLink" target="_blank">
+              <img src="link.png" alt="Profile Link" width="20" />
+            </a>
+          </p>
+
+          <p><strong>Applied:</strong> {{ job.applyDate | date: 'MMM d' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

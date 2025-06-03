@@ -24,7 +24,7 @@ export class SigninComponent {
       this.router.navigateByUrl('/institution/view-profile');
     }else if(id == '6' && formData.email=='t' && formData.password=='t') {
       console.log('Login successful');
-      this.router.navigateByUrl('/institution/create-profile');
+      this.router.navigateByUrl('applications');
     }
   }
   navigateToSignup() {

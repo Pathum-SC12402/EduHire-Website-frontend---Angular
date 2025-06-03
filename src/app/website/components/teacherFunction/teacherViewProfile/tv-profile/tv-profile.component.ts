@@ -17,7 +17,7 @@ export class TvProfileComponent {
     // Set static or fetched profile data
     const id = this.cookieService.get('pageId');
     console.log('Page ID:', id);
-    if (id !== '1') {
+    if (id !== '2') {
       console.log('Invalid page ID:', id);
       this.isEditVisible = false;
     }
@@ -72,6 +72,5 @@ export class TvProfileComponent {
   closePopup() {
     this.showUpdatePopup = false;
   }
-
   
 }

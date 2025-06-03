@@ -15,6 +15,7 @@ export class SignupComponent {
   onSubmit(formData: { email: string; password: string }) {
     console.log('Form Data:', formData);
     const id = this.cookieService.get('pageId');
+    console.log('Page ID:', id);
     if(id == '1' && formData.email=='t' && formData.password=='t') {
       console.log('Signup successful');
       this.router.navigateByUrl('/teachers/verify-email');
